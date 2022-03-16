@@ -1,38 +1,103 @@
-.App {
-  text-align: center;
+/* Variablr Color */
+:root {
+   --blue: #4275fa;
+   --black: #202020;
+   --white: #ffffff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+   margin: 0;
+   padding: 0;
+   text-decoration: none;
+   -webkit-transition: all 0.3s ease-in-out;
+   transition: all 0.3s ease-in-out;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+   font-family: "Poppins", sans-serif !important;
+   box-sizing: border-box;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+section {
+   padding: 76px 0;
 }
 
-.App-link {
-  color: #61dafb;
+/* Thumbtrack */
+
+::-webkit-scrollbar {
+   width: 8px;
+}
+::-webkit-scrollbar-track {
+   background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+   background: var(--blue);
+   border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Navbar */
+.navbar-mri {
+   padding: 1rem 0;
+}
+.navbar-mri .navbar-nav {
+   background: #fff;
+   border-radius: 8px;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.navbar-mri .navbar-nav .nav-link {
+   padding: 1rem 0;
+   color: var(--black) !important;
+}
+
+/* section Hero */
+.hero {
+   padding-top: 150px;
+   background: url(../public/images/circle1.png), linear-gradient(126.69deg, #4275fa 6.42%, rgba(17, 2, 198, 0.87) 104.03%);
+   background-position: 80%;
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+.hero .header {
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 33px;
+   letter-spacing: 0.03em;
+}
+
+.hero .sub-title {
+   font-size: 40px;
+   line-height: 48px;
+   font-weight: 600;
+   letter-spacing: 0.06em;
+}
+
+.hero hr {
+   opacity: 1;
+   width: 100px;
+   height: 4px !important;
+}
+
+.hero .desc {
+   font-size: 16px;
+   line-height: 28px;
+   font-weight: 500;
+   letter-spacing: 0.06em;
+}
+
+.hero .cta {
+   display: flex;
+   gap: 32px;
+}
+
+/* Desktop Version */
+@media (min-width: 992px) {
+   /* Section Hero */
+   .hero {
+      background-size: 100%;
+      padding-top: 80px;
+      background-position: top center;
+   }
 }

@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { About } from "./About";
+import { Home } from "./Home";
+import { Container, Nav, Navbar } from "react-bootstrap";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+   return (
+      <BrowserRouter>
+         <div className="App">
+            <Navbar className="fixed-top navbar-mri " expand="lg">
+               <Container>
+                  <Navbar.Brand as={Link} to="/">
+                     React-Bootstrap
+                  </Navbar.Brand>
+                  <Navbar.Toggle aria-controls="basic-navbar-nav" />
+                  <Navbar.Collapse id="basic-navbar-nav">
+                     <Nav className="ms-auto">
+                        <Nav.Link as={Link} to="/">
+                           Home
+                        </Nav.Link>
+                        <Nav.Link as={Link} to="/about">
+                           About
+                        </Nav.Link>
+                     </Nav>
+                  </Navbar.Collapse>
+               </Container>
+            </Navbar>
+
+            <div>
+               <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/about" element={<About />} />
+               </Routes>
+            </div>
+         </div>
+      </BrowserRouter>
+   );
 }
 
 export default App;
